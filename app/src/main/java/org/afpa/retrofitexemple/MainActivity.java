@@ -41,12 +41,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getPosts() {
-        Map<String,String> parameters = new HashMap<>();
-        parameters.put("userIs","1");
-        parameters.put("_sort","id");
-        parameters.put("_order","desc");
+        Map<String, String> parameters = new HashMap<>();
+        parameters.put("userIs", "1");
+        parameters.put("_sort", "id");
+        parameters.put("_order", "desc");
 
-        Call<List<Post>> call = jsonPlaceHolderApi.getPosts(new Integer[]{1,8},"id","desc");
+        Call<List<Post>> call = jsonPlaceHolderApi.getPosts(new Integer[]{1, 8}, "id", "desc");
 
         call.enqueue(new Callback<List<Post>>() {
             @Override
@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         Call<List<Comment>> call = jsonPlaceHolderApi.getComments(3);
         /*Call<List<Comment>> call = jsonPlaceHolderApi
                 .getComments("https://jsonplaceholder.typicode.com/posts/3/comments");
-*/
+        */
         call.enqueue(new Callback<List<Comment>>() {
             @Override
             public void onResponse(Call<List<Comment>> call, Response<List<Comment>> response) {
